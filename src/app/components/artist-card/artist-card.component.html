@@ -1,0 +1,10 @@
+<div class="card col border-light h-100">
+  <img src="{{ artist.imageUrl }}" class="card-img-top img-fluid" alt="{{ artist.name }} cover">
+  <div class="card-body">
+    <h5 class="card-title">{{ artist.name }}</h5>
+  </div>
+
+  <div *ngFor="let song of artist.songs">
+    <app-song-card [song]="song"></app-song-card>
+  </div>
+</div>

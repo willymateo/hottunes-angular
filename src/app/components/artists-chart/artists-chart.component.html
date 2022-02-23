@@ -1,0 +1,8 @@
+<div class="card-group container-fluid overflow-hidden">
+  <div class="row row-cols-4 gx-5 justify-content-center align-items-end">
+
+    <div *ngFor="let artist of artists">
+      <app-artist-card [artist]="artist"></app-artist-card>
+    </div>
+  </div>
+</div>
