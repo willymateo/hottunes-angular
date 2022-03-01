@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Song } from 'src/app/interfaces/Song';
 
 @Component({
@@ -13,10 +13,16 @@ export class SongCardComponent implements OnInit {
     imageUrl: "",
     stars: 0,
   };
+  @Output("clickBtnPlay") clickBtnPlay = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  playHandler() {
+    console.log("Print by son");
+    this.clickBtnPlay.emit(this.song.name);
   }
 
 }

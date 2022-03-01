@@ -18,4 +18,8 @@ export class ArtistCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showResult(event: any) {
+    console.log("Print by father");
+  }
+
 }

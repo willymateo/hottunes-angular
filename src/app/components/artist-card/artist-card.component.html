@@ -5,6 +5,6 @@
   </div>
 
   <div *ngFor="let song of artist.songs">
-    <app-song-card [song]="song"></app-song-card>
+    <app-song-card [song]="song" (clickBtnPlay)="showResult($event)"></app-song-card>
   </div>
 </div>
