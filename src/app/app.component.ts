@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Artist } from './interfaces/Artist';
 import { Mark } from './interfaces/Mark';
 import { Song } from './interfaces/Song';
+import { ProviderService } from './services/provider.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,23 @@ import { Song } from './interfaces/Song';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  private id_BadBunny: number = 51304;
   title: string = 'Hot Tunes';
+
+  constructor(
+    private providerService: ProviderService,
+  ) {
+    this.loadArtists();
+  }
+
+  loadArtists() {
+    this.providerService.getArtist(this.id_BadBunny).subscribe({
+      next: data => {
+        console.log(data);
+      },
+      error: err => console.log(err),
+    });
+  }
 
   yonaguni: Song = {
     name: "Yonaguni",

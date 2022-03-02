@@ -22,7 +22,7 @@ import { ArtistsChartComponent } from './components/artists-chart/artists-chart.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
