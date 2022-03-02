@@ -1,5 +1,11 @@
 import { Song } from "./Song";
 
+export interface HappiResponse {
+    success: boolean;
+    length:  number;
+    result:  Artist;
+}
+
 export interface Artist {
   id_artist:  number;
   artist:     string;

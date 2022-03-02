@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { HappiResponse } from '../interfaces/Artist';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +16,8 @@ export class ProviderService {
     private http: HttpClient,
   ) { }
 
-  getArtist(idArtist: number) {
-    return this.http.get(`${this.base_url}/artists/${ idArtist }`, {
+  getArtist(idArtist: number): Observable<HappiResponse>{
+    return this.http.get<HappiResponse>(`${this.base_url}/artists/${ idArtist }`, {
       headers: this.headers,
     });
   }

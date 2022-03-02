@@ -31,7 +31,7 @@ export class AppComponent {
     this.id_Artists.forEach(id_Artist =>{
       this.providerService.getArtist(id_Artist).subscribe({
         next: data => {
-          this.artists.push((<any>data).result);
+          this.artists.push(data.result);
         },
         error: err => console.log(err),
       });
