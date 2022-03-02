@@ -1,7 +1,7 @@
 <div class="card col border-light h-100">
-  <img src="{{ artist.imageUrl }}" class="card-img-top img-fluid" alt="{{ artist.name }} cover">
+  <img src="{{ artist.cover }}" class="card-img-top img-fluid" alt="{{ artist.artist }} cover">
   <div class="card-body">
-    <h5 class="card-title">{{ artist.name }}</h5>
+    <h5 class="card-title">{{ artist.artist }}</h5>
   </div>
 
   <div *ngFor="let song of artist.songs">

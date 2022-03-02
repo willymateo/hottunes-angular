@@ -10,7 +10,15 @@ import { ProviderService } from './services/provider.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private id_BadBunny: number = 51304;
+  artists: Artist[] = [
+  ];
+
+  private id_Artists: number[] = [
+    51304,
+    28124,
+    7841,
+    30385,
+  ];
   title: string = 'Hot Tunes';
 
   constructor(
@@ -20,11 +28,13 @@ export class AppComponent {
   }
 
   loadArtists() {
-    this.providerService.getArtist(this.id_BadBunny).subscribe({
-      next: data => {
-        console.log(data);
-      },
-      error: err => console.log(err),
+    this.id_Artists.forEach(id_Artist =>{
+      this.providerService.getArtist(id_Artist).subscribe({
+        next: data => {
+          this.artists.push((<any>data).result);
+        },
+        error: err => console.log(err),
+      });
     });
   }
 
@@ -128,46 +138,6 @@ export class AppComponent {
       name: "Fiora-Vanti",
       url: "http://www.canmuseum.com/Staging/Images/Cans/60312.jpg",
       value: 0.75
-    },
-  ];
-
-
-  artists: Artist[] = [
-    {
-      name: "Bad Bunny",
-      imageUrl: "https://static.billboard.com/files/media/bad-bunny-press-new-2019-billboard-1548-compressed.jpg",
-      songs: [
-        this.yonaguni,
-        this.aTuMerced,
-        this.dakiti,
-      ]
-    },
-    {
-      name: "El Alfa",
-      imageUrl: "http://www.kariculture.net/wp-content/uploads/2019/04/EL-ALFA.jpeg",
-      songs: [
-        this.tamoEnHoja,
-        this.esteTemaMaste,
-        this.coronao,
-      ]
-    },
-    {
-      name: "Aventura",
-      imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vPJQVhjCti5GHHMs49W01wHaEK%26pid%3DApi&f=1",
-      songs: [
-        this.ensenameAOlvidar,
-        this.obsesion,
-        this.dileAlAmor,
-      ]
-    },
-    {
-      name: "Willie Colón",
-      imageUrl: "http://endorfinacultural.com/wp-content/uploads/2017/10/WILLIE-COLON-PIC1.jpg",
-      songs: [
-        this.idilio,
-        this.elGranVaron,
-        this.juanitoAlimana,
-      ]
     },
   ];
 

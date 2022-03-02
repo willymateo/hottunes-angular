@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {Artist} from 'src/app/interfaces/Artist';
+import { Artist } from 'src/app/interfaces/Artist';
 
 @Component({
   selector: 'app-artist-card',
@@ -8,8 +8,19 @@ import {Artist} from 'src/app/interfaces/Artist';
 })
 export class ArtistCardComponent implements OnInit {
   @Input("artist") artist: Artist = {
-    name: "",
-    imageUrl: "",
+    id_artist: 0,
+    artist: "",
+    mbid: "",
+    gender: "",
+    country: "",
+    youtube: "",
+    instagram: "",
+    twitter: "",
+    facebook: "",
+    website: "",
+    spotify: "",
+    cover: "",
+    api_albums: "",
     songs: [],
   };
 
