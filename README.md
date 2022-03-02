@@ -1,2 +1,2 @@
 # hotTunes
-Hot Tunes is a web portal that shows musics by artists.
+The best music library at the moment.
