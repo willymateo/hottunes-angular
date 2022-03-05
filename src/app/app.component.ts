@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Artist } from './interfaces/Artist';
-import { Mark } from './interfaces/Mark';
 import { Song } from './interfaces/Song';
 import { ProviderService } from './services/provider.service';
 
@@ -10,16 +9,14 @@ import { ProviderService } from './services/provider.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  artists: Artist[] = [
-  ];
-
+  title: string = 'Hot Tunes';
+  artists: Artist[] = [];
   private id_Artists: number[] = [
     51304,
     28124,
     7841,
     30385,
   ];
-  title: string = 'Hot Tunes';
 
   constructor(
     private providerService: ProviderService,
@@ -121,25 +118,6 @@ export class AppComponent {
     imageUrl: "https://http2.mlstatic.com/D_Q_NP_464315-MLM25239460251_122016-Q.jpg",
     stars: 5
   };
-
-
-  markArray: Mark[] = [
-    {
-      name: "Coca-Cola",
-      url: "https://www.nexpressdelivery.co.uk/img/product/main_697_cokecanpng.png",
-      value: 1.5
-    },
-    {
-      name: "Pepsi",
-      url: "https://i5.walmartimages.com/asr/42393b45-4427-41dd-b36c-7f69adb53834_1.e90c2ecc295e7bf7b28e02235461a527.jpeg",
-      value: 1
-    },
-    {
-      name: "Fiora-Vanti",
-      url: "http://www.canmuseum.com/Staging/Images/Cans/60312.jpg",
-      value: 0.75
-    },
-  ];
 
 
   songs: Song[] = [
